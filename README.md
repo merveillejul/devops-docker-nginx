@@ -1,18 +1,31 @@
-# Devops projet -  BTS SIO SLAM
+# Projet DevOps - Docker Nginx + MySQL
 
-##Objectif
-Déployer un site web avec Docker et Docker compose.
+## Objectif
+Création d'une infrastructure web simple conteneurisée avec Docker.
 
-##Technologie
+Projet réalisé dans le cadre de ma montée en compétences DevOps
+(BTS SIO – orientation Cloud / DevOps).
+
+---
+
+## Technologies utilisées
 - Docker
-- Docker compose
+- Docker Compose
 - Nginx
-- Mysql
+- MySQL
 - Linux Ubuntu
+- Git & GitHub
 
-##Lancement du projet 
+---
+
+## Architecture
+
+Utilisateur → Nginx (container) → MySQL (container)
+
+---
+
+## Lancer le projet
+
+```bash
 docker-compose up -d
-
-##Auteur
-Merveille Juliana 
 
