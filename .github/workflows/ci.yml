@@ -1,0 +1,27 @@
+name: CI - Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v3
+
+      - name: Construire les images Docker
+        run: docker compose up -d --build
+
+      - name: Verifier que les conteneurs tournent
+        run: docker compose ps
+
+      - name: Tester que Nginx repond
+        run: curl -f http://localhost:8081 || exit 1
+
+      - name: Arreter les conteneurs
+        run: docker compose down
